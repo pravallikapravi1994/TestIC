@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\CommonClass.cs" />
+    <Compile Include="pages\customer.cs" />
     <Compile Include="pages\Home.cs" />
     <Compile Include="pages\Login.cs" />
     <Compile Include="pages\TMpage.cs" />

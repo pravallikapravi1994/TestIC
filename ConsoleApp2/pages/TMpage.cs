@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,14 @@ namespace ConsoleApp2.pages
     {
         public void createTM(IWebDriver driver)
         {
+
+
+
+        
+
+        
+
+            Thread.Sleep(2000);
             // Create Time and Material page
             driver.FindElement(By.LinkText("Create New")).Click();
             driver.FindElement(By.XPath("//*[@id='TimeMaterialEditForm']/div/div[1]/div/span[1]/span/span[2]/span")).Click();
@@ -27,6 +36,13 @@ namespace ConsoleApp2.pages
             IWebElement upload = driver.FindElement(By.Id("files"));
             upload.SendKeys("C:\\IndustryConnectMaterial\\Devops.PNG");
             driver.FindElement(By.Id("SaveButton")).Click();
+
+            // Thread.Sleep(2000);
+            // driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
+            // Thread.Sleep(1000);
+           // Assert.That(driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]")).Text == "Automationcode1");
+
+
         }
 
         public void EditTM(IWebDriver driver)
@@ -49,6 +65,8 @@ namespace ConsoleApp2.pages
             driver.FindElement(By.Id("Code")).SendKeys("Automationcode1");
             driver.FindElement(By.Id("SaveButton")).Click();
 
+           // Assert.That(col).text
+
         }
         public void DeleteTM(IWebDriver driver)
         {
@@ -67,6 +85,8 @@ namespace ConsoleApp2.pages
 
             Thread.Sleep(1000);
 
+
         }
     }
-}
+    }
+

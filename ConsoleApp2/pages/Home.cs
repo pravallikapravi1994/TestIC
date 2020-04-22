@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using NUnit.Framework;
+using OpenQA.Selenium;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +16,12 @@ namespace ConsoleApp2.pages
             if (driver.FindElement(By.XPath("//*[@id='logoutForm']/ul/li/a")).Text == "Hello hari!")
             {
                 Console.WriteLine("Logged in successfully, Test passed");
+                Assert.Pass();
             }
             else
             {
                 Console.WriteLine("Login Failed, Test Failed");
+                Assert.Fail();
             }
         }
 
@@ -29,6 +32,16 @@ namespace ConsoleApp2.pages
 
           
         }
+        public void navigateToCS(IWebDriver driver)
+        {
+            driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/a")).Click();
+            driver.FindElement(By.XPath("/html/body/div[3]/div/div/ul/li[5]/ul/li[1]/a")).Click();
+
+
+        }
+
+
+
 
     }
 }
